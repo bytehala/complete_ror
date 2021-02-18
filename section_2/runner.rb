@@ -14,3 +14,5 @@ puts secure_users
 
 puts
 p Crud.authenticate_user("mashrur", "password1", secure_users)
+obj = Crud.new
+obj.instance_method

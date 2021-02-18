@@ -2,6 +2,7 @@ module Crud
 
     require 'bcrypt'
 
+    # These are class methods
     def self.create_hash_digest(password)
         BCrypt::Password.create(password)
     end
@@ -17,7 +18,9 @@ module Crud
         list_of_users
     end
 
-    
+    def instance_method() 
+        puts "I'm an instance method"
+    end
 
     def self.authenticate_user(username, password, list_of_users)
         list_of_users.each do |user_record|
