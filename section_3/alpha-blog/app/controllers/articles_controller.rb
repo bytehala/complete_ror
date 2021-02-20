@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
         @article = Article.new(params.require(:article).permit(:title, :description)) # Safety feature
         # render plain: @article.inspect # show that it gets created
         if @article.save
+            flash[:notice] = "Article was created successfully."
             redirect_to @article # shortcut for article_path(@article) aka /article/:id
         else
             render 'new'
