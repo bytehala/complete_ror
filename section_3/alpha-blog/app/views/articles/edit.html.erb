@@ -1,0 +1,30 @@
+<h1>Edit article</h1>
+
+<% if @article.errors.any? %>
+    <h2></h2>
+    <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<!-- Action View Form Helpers, article on guides.rubyonrails.org -->
+<!-- articles_path just means /articles in rails lingo -->
+<!-- enable pre-filling using the instance variable @article. what does local: true do? -->
+<%= form_with(model: @article, local: true) do |f| %>
+
+<p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+</p>
+<p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+</p>
+<p>
+    <%= f.submit %>
+</p>
+
+
+<% end  %>
