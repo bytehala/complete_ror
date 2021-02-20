@@ -5,6 +5,7 @@
 <table>
     <thead>
         <tr>
+            <th>ID</th>
             <th>Title</th>
             <th>Description</th>
             <th>Action</th>
@@ -13,9 +14,10 @@
     <tbody>
         <% @articles.each do |article| %>
             <tr>
-                <td><%= article.title %></td></td>
+                <td><%= article.id %></td>
+                <td><%= article.title %></td>
                 <td><%= article.description %></td>
-                <td>Placeholder</td>
+                <td><%= link_to 'Delete', article_path(article), method: :delete %></td> <!-- rails knows that you want to pass the id by saying (article) -->
             </tr>
         <% end %>
     </tbody>
