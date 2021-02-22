@@ -11,9 +11,8 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <%= msg %>
-    <% end %>
+    <!-- to render partials, you don't need to mention the underscore -->
+    <%= render 'layouts/messages' %>
     <%= yield %>
   </body>
 </html>
