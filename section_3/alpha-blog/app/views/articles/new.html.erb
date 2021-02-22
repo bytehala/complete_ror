@@ -11,7 +11,7 @@
 
 <!-- Action View Form Helpers, article on guides.rubyonrails.org -->
 <!-- articles_path just means /articles in rails lingo -->
-<%= form_with scope: :article, url: articles_path, local: true do |f| %>
+<%= form_with(model: @article, local: true) do |f| %>
 
 <p>
     <%= f.label :title %><br/>
