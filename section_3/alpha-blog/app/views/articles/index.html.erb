@@ -8,7 +8,7 @@
             <th>ID</th>
             <th>Title</th>
             <th>Description</th>
-            <th>Action</th>
+            <th colspan="3">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -19,8 +19,13 @@
                 <td><%= article.description %></td>
                 <td><%= link_to 'Show', article_path(article) %></td>
                 <td><%= link_to 'Edit', edit_article_path(article) %></td>
-                <td><%= link_to 'Delete', article_path(article), method: :delete %></td> <!-- rails knows that you want to pass the id by saying (article) -->
+                <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure"} %></td> <!-- rails knows that you want to pass the id by saying (article) -->
             </tr>
         <% end %>
     </tbody>
 </table>
+<!-- since the path says new_article -->
+<p>
+    <%= link_to 'Create new article', new_article_path %> |
+    <%= link_to 'Home', root_path %>
+</p>
