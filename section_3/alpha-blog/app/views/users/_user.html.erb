@@ -6,7 +6,11 @@
             <h3><%= link_to user.username, user %></h3>
           </div>
           <div class="card-body">
-            
+            <div class="card-text">
+              <p><%= pluralize(user.articles.count, "articles") %></p>
+              <%= link_to "View", user, class: "btn btn-outline-success" %>
+              <%= link_to "Edit", edit_user_path(user), class: "btn btn-outline-info" %>
+            </div>
           </div>
           <div class="card-footer text-muted">
             
