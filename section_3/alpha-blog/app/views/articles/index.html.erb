@@ -2,6 +2,9 @@
   <h1 class="text-center mt-4">Listing all articles</h1>
 
   <div class="container">
-    <%= render'article' %>
+    <div class="flickr_pagination">
+      <%= will_paginate @articles, :container => false %>
+      <%= render'article' %>
+    </div>
   </div>
 </div>
